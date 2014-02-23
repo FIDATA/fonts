@@ -1,0 +1,80 @@
+This software incorporates works covered by the following copyright and
+licenses:
+
+ 
+PT Sans
+-------
+Copyright (c) 2009  ParaType Ltd.
+
+Fonts are licensed under PT Free Font License 1.2.
+
+Licenses are in files:
+	*	`src/main/dist/fonts/PTSans/PT Free Font License_eng_1.2.txt`
+(English version);
+	*	`src/main/dist/fonts/PTSans/PT Free Font License_rus_1.2.txt`
+(Russian version).
+
+
+PT Serif
+--------
+Copyright (c) 2010  ParaType Ltd.
+
+Fonts are licensed under PT Free Font License 1.2.
+
+Licenses are in files:
+	*	`src/main/dist/fonts/PTSerif/PT Free Font License_eng_1.2.txt`
+(English version);
+	*	`src/main/dist/fonts/PTSerif/PT Free Font License_rus_1.2.txt`
+(Russian version).
+
+
+PT Mono
+-------
+Copyright (c) 2010  ParaType Inc., ParaType Ltd.
+
+Font is licensed under PT Free Font License 1.3.
+
+Licenses are in files:
+	*	`src/main/dist/fonts/PTMono/PT Free Font License_eng_1.3.txt`
+(English version);
+	*	`src/main/dist/fonts/PTMono/PT Free Font License_rus_1.3.txt`
+(Russian version).
+
+
+Russo
+-----
+Copyright (c) 2011-2012, Jovanny Lemonad (jovanny.ru), with Reserved
+Font Name "Russo"
+
+Font is licensed under the SIL Open Font License, Version 1.1
+
+License is in file `src/main/dist/fonts/Russo/OFL.txt`.
+
+
+XITS Math
+---------
+Copyright (c) 2001-2010 by the STI Pub Companies, consisting of the
+American Institute of Physics, the American Chemical Society, the
+American Mathematical Society, the American Physical Society, Elsevier,
+Inc., and The Institute of Electrical and Electronic Engineers, Inc.
+(www.stixfonts.org), with Reserved Font Name STIX Fonts
+
+Portions copyright (c) 2009-2012 by Khaled Hosny.
+
+Portions copyright (c) 1998-2003 by MicroPress, Inc.
+(www.micropress-inc.com), with Reserved Font Name TM Math.
+
+Portions copyright (c) 1990 by Elsevier, Inc.
+
+License is in file `src/main/dist/fonts/XITS-Math/OFL.txt`.
+
+
+-----------------------------------------------------------------------
+Copyright (C) 2014  Basil Peace
+
+This file is part of FIDATA Fonts.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.  This file is offered as-is,
+without any warranty.

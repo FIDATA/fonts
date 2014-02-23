@@ -1,0 +1,109 @@
+/* This file is part of FIDATA Fonts.
+   Copyright (C) 2014  Basil Peace
+   
+   Redistribution and use, with or without modification, are permitted
+   provided that the following condition is met:
+   
+    1. Redistributions of this code must retain the above copyright
+       notice, this condition and the following disclaimer.
+   
+   THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR
+   IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+   EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+   PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+   OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+   DAMAGE. */
+
+buildscript {
+	repositories {
+		jcenter()
+		maven {
+			url "$artifactory_contextUrl/plugins-release"
+			credentials {
+				username = artifactory_user
+				password = artifactory_password
+			}
+		}
+	}
+	dependencies {
+		classpath(
+			group: 'org.jfrog.buildinfo',
+			name: 'build-info-extractor-gradle',
+			version: '2.2.3'
+		)
+	}
+}
+
+
+// Plugins
+
+apply plugin: 'distribution'
+apply plugin: 'maven-publish'
+apply plugin: 'artifactory-publish'
+
+
+// Project info
+
+group = 'FIDATA'
+version = '0.3-SNAPSHOT'
+// buildInfo.build.name = ''
+// buildInfo.build.number = ''
+
+
+// Sources
+// sourceSets {
+// 	main { resources { srcDir 'src/main/**' } }
+// }
+
+
+// Tasks
+
+defaultTasks 'clean', 'all'
+
+artifactoryPublish {
+	dependsOn distZip
+}
+
+task all {
+	dependsOn artifactoryPublish
+}
+
+
+// Settings
+
+publishing {
+	publications {
+		artifactPublication(MavenPublication) {
+			artifact(file("$buildDir/distributions/${project.name}-${project.version}.zip"))
+		}
+	}
+}
+
+artifactory {
+	contextUrl = artifactory_contextUrl
+	publish {
+		repository {
+			repoKey = 'ext-snapshot-local'
+			username = artifactory_user
+			password = artifactory_password
+			maven = true
+		}
+		defaults {
+			publications ('artifactPublication')
+		}
+	}
+	resolve {
+		repository {
+			repoKey = 'libs-snapshot'
+			username = artifactory_user
+			password = artifactory_password
+			maven = true
+		}
+	}
+}
