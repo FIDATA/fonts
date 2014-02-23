@@ -1,12 +1,14 @@
-/* This file is part of FIDATA Fonts.
+/* Gradle script for build of FIDATA Fonts
    Copyright (C) 2014  Basil Peace
-   
+
+   This file is part of FIDATA Fonts.
+
    Redistribution and use, with or without modification, are permitted
    provided that the following condition is met:
-   
+
     1. Redistributions of this code must retain the above copyright
        notice, this condition and the following disclaimer.
-   
+
    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR
    IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
