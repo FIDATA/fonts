@@ -26,11 +26,7 @@ buildscript {
 	repositories {
 		jcenter()
 		maven {
-			url "$artifactory_contextUrl/plugins-release"
-			credentials {
-				username = artifactory_user
-				password = artifactory_password
-			}
+			url "http://artifactory.fidata.org/plugins-release"
 		}
 	}
 	dependencies {
@@ -88,12 +84,10 @@ publishing {
 }
 
 artifactory {
-	contextUrl = artifactory_contextUrl
+	contextUrl = 'http://artifactory.fidata.org'
 	publish {
 		repository {
 			repoKey = 'ext-snapshot-local'
-			username = artifactory_user
-			password = artifactory_password
 			maven = true
 		}
 		defaults {
@@ -103,8 +97,6 @@ artifactory {
 	resolve {
 		repository {
 			repoKey = 'libs-snapshot'
-			username = artifactory_user
-			password = artifactory_password
 			maven = true
 		}
 	}
